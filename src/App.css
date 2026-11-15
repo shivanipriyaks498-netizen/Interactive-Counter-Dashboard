@@ -1,0 +1,290 @@
+
+/* Main Dashboard */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard {
+  min-height: 100vh;
+  padding: 25px;
+  transition: 0.3s ease;
+}
+
+.light {
+  background: #f1f3f9;
+  color: #222;
+}
+
+.dark {
+  background: #171729;
+  color: #fff;
+}
+
+/* Header */
+
+.header {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header h1 {
+  color: #7654d6;
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: #888;
+}
+
+/* Buttons */
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #7654d6;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+button:hover:not(:disabled) {
+  background: #5635b5;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background: #999;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.theme-btn {
+  background: #222;
+}
+
+/* Main Content */
+
+.main-content {
+  max-width: 1000px;
+  margin: 35px auto;
+}
+
+/* Counter Card */
+
+.counter-card {
+  background: white;
+  color: #222;
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dark .counter-card,
+.dark .stat-card,
+.dark .history-card,
+.dark .reset-section {
+  background: #292943;
+  color: white;
+}
+
+.counter-card h2 {
+  margin-top: 0;
+}
+
+.count {
+  font-size: 75px;
+  color: #7654d6;
+  margin: 15px 0;
+}
+
+.range,
+.progress-text {
+  color: #888;
+  font-size: 14px;
+}
+
+/* Progress Bar */
+
+.progress-container {
+  max-width: 500px;
+  height: 12px;
+  background: #ddd;
+  border-radius: 20px;
+  margin: 20px auto 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #7654d6, #bd6df0);
+  border-radius: 20px;
+  transition: width 0.3s;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.reset-btn {
+  background: #e49b31;
+}
+
+.limit-message {
+  color: #e53935;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.success-message {
+  color: #24965b;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Statistics */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+  font-size: 15px;
+}
+
+.stat-card h2 {
+  font-size: 30px;
+  color: #7654d6;
+}
+
+/* History */
+
+.history-card {
+  background: white;
+  padding: 25px;
+  margin-top: 25px;
+  border-radius: 15px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.clear-btn {
+  background: #e34c4c;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.history-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background: rgba(118, 84, 214, 0.12);
+}
+
+.history-list strong {
+  color: #7654d6;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 25px;
+  color: #888;
+}
+
+/* Reset All */
+
+.reset-section {
+  background: white;
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.reset-all-btn {
+  background: #e53935;
+  margin-top: 10px;
+}
+
+.reset-all-btn:hover {
+  background: #b71c1c;
+}
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 13px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 650px) {
+  .dashboard {
+    padding: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-card {
+    padding: 25px 15px;
+  }
+
+  .count {
+    font-size: 60px;
+  }
+
+  .history-header {
+    flex-direction: column;
+  }
+}
